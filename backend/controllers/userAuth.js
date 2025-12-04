@@ -153,24 +153,7 @@ router.post('/searchUser' , authMiddleware , async(req , res) => {
   }
 })
 
-// // 🟢 GET ALL USERS (except logged-in one)
-// router.get('/Allusers', authMiddleware, async (req, res) => {
-//   try {
-//     const loggedInUserId = req.userId;
-//     const users = await User.find({ _id: { $ne: loggedInUserId } }).select('-password');
 
-//     res.status(200).json({
-//       success: true,
-//       message: 'All users fetched successfully',
-//       data: users,
-//     });
-//   } catch (error) {
-//     console.error('AllUsers Error:', error.message);
-//     res.status(500).json({ message: 'Internal server error' });
-//   }
-// });
-
-// 🟢   start chat api
 
 router.post("/startChat", authMiddleware, async (req, res) => {
   try {
